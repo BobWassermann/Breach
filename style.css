@@ -1,0 +1,37 @@
+body { margin: 0; }
+
+canvas {
+  width: 100%; height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+}
+
+h1.title {
+  position: fixed;
+  color: #fff;
+  z-index: 10;
+  top: 50%; left: 50%;
+  letter-spacing: 0.1em;
+  font-family: 'Gotham', sans-serif;
+  font-size: 200px;
+  padding: 0; margin: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#content {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -o-display: flex;
+  display: flex;
+}
+
+#content div {
+  width: 20%;
+}

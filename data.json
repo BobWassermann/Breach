@@ -1,0 +1,867 @@
+[
+  {
+    "name":"Apple",
+    "year":8,
+    "records_lost":12367232
+  },
+  {
+    "name":"178.com",
+    "year":7,
+    "records_lost":10000000
+  },
+  {
+    "name":"Accendo Insurance Co. ",
+    "year":7,
+    "records_lost":175350
+  },
+  {
+    "name":"Adobe",
+    "year":9,
+    "records_lost":36000000
+  },
+  {
+    "name":"Advocate Medical Group",
+    "year":9,
+    "records_lost":4000000
+  },
+  {
+    "name":"Affinity Health Plan, Inc.",
+    "year":5,
+    "records_lost":344579
+  },
+  {
+    "name":"Ameritrade Inc.",
+    "year":1,
+    "records_lost":200000
+  },
+  {
+    "name":"Ankle & foot Center of Tampa Bay, Inc.",
+    "year":6,
+    "records_lost":156000
+  },
+  {
+    "name":"AOL",
+    "year":0,
+    "records_lost":92000000
+  },
+  {
+    "name":"AOL",
+    "year":10,
+    "records_lost":2400000
+  },
+  {
+    "name":"AOL",
+    "year":2,
+    "records_lost":20000000
+  },
+  {
+    "name":"Apple",
+    "year":9,
+    "records_lost":275000
+  },
+  {
+    "name":"AT&T",
+    "year":4,
+    "records_lost":113000
+  },
+  {
+    "name":"AT&T",
+    "year":6,
+    "records_lost":114000
+  },
+  {
+    "name":"Auction.co.kr",
+    "year":4,
+    "records_lost":18000000
+  },
+  {
+    "name":"Automatic Data Processing",
+    "year":1,
+    "records_lost":125000
+  },
+  {
+    "name":"AvMed, Inc.",
+    "year":5,
+    "records_lost":1220000
+  },
+  {
+    "name":"Betfair",
+    "year":6,
+    "records_lost":2300000
+  },
+  {
+    "name":"Bethesda Game Studios",
+    "year":7,
+    "records_lost":200000
+  },
+  {
+    "name":"Blizzard",
+    "year":8,
+    "records_lost":14000000
+  },
+  {
+    "name":"Blue Cross Blue Shield of Tennessee",
+    "year":5,
+    "records_lost":1023209
+  },
+  {
+    "name":"BNY Mellon Shareowner Services",
+    "year":4,
+    "records_lost":12500000
+  },
+  {
+    "name":"California Department of Child Support Services",
+    "year":8,
+    "records_lost":800000
+  },
+  {
+    "name":"Cardsystems Solutions Inc. ",
+    "year":1,
+    "records_lost":40000000
+  },
+  {
+    "name":"Central Hudson Gas & Electric",
+    "year":9,
+    "records_lost":110000
+  },
+  {
+    "name":"CheckFree Corporation",
+    "year":5,
+    "records_lost":5000000
+  },
+  {
+    "name":"Chile Ministry Of Education",
+    "year":4,
+    "records_lost":6000000
+  },
+  {
+    "name":"China Software Developer Network",
+    "year":7,
+    "records_lost":6000000
+  },
+  {
+    "name":"Citigroup",
+    "year":1,
+    "records_lost":3900000
+  },
+  {
+    "name":"Citigroup",
+    "year":7,
+    "records_lost":360083
+  },
+  {
+    "name":"Citigroup",
+    "year":9,
+    "records_lost":150000
+  },
+  {
+    "name":"City and Hackney Teaching Primary Care Trust",
+    "year":3,
+    "records_lost":160000
+  },
+  {
+    "name":"Classified Iraq War documents",
+    "year":6,
+    "records_lost":392000
+  },
+  {
+    "name":"Colorado government",
+    "year":6,
+    "records_lost":105470
+  },
+  {
+    "name":"Community Health Services",
+    "year":11,
+    "records_lost":4500000
+  },
+  {
+    "name":"Compass Bank",
+    "year":3,
+    "records_lost":1000000
+  },
+  {
+    "name":"Countrywide Financial Corp",
+    "year":2,
+    "records_lost":2600000
+  },
+  {
+    "name":"Countrywide Financial Corp",
+    "year":7,
+    "records_lost":2500000
+  },
+  {
+    "name":"Court Ventures",
+    "year":8,
+    "records_lost":200000000
+  },
+  {
+    "name":"Crescent Health Inc., Walgreens",
+    "year":9,
+    "records_lost":100000
+  },
+  {
+    "name":"D&B, Altegrity",
+    "year":10,
+    "records_lost":1000000
+  },
+  {
+    "name":"Dai Nippon Printing",
+    "year":3,
+    "records_lost":8637405
+  },
+  {
+    "name":"Data Processors International",
+    "year":4,
+    "records_lost":5000000
+  },
+  {
+    "name":"Dominios Pizzas (France)",
+    "year":10,
+    "records_lost":600000
+  },
+  {
+    "name":"Driving Standards Agency,",
+    "year":3,
+    "records_lost":3000000
+  },
+  {
+    "name":"Driving Standards Agency",
+    "year":3,
+    "records_lost":3000000
+  },
+  {
+    "name":"Drupal",
+    "year":9,
+    "records_lost":1000000
+  },
+  {
+    "name":"Ebay",
+    "year":10,
+    "records_lost":145000000
+  },
+  {
+    "name":"Educational Credit Management Corp",
+    "year":6,
+    "records_lost":3300000
+  },
+  {
+    "name":"Eisenhower Medical Center",
+    "year":7,
+    "records_lost":514330
+  },
+  {
+    "name":"Embassy Cables",
+    "year":6,
+    "records_lost":251000
+  },
+  {
+    "name":"Emergency Healthcare Physicians, Ltd.",
+    "year":6,
+    "records_lost":180111
+  },
+  {
+    "name":"Emory Healthcare",
+    "year":8,
+    "records_lost":315000
+  },
+  {
+    "name":"Evernote",
+    "year":9,
+    "records_lost":50000000
+  },
+  {
+    "name":"Facebook",
+    "year":9,
+    "records_lost":6000000
+  },
+  {
+    "name":"Fidelity National Information Services",
+    "year":3,
+    "records_lost":8500000
+  },
+  {
+    "name":"Florida Courts",
+    "year":9,
+    "records_lost":100000
+  },
+  {
+    "name":"Florida Department of Juvenile Justice",
+    "year":9,
+    "records_lost":100000
+  },
+  {
+    "name":"Formspring",
+    "year":8,
+    "records_lost":420000
+  },
+  {
+    "name":"Gamigo",
+    "year":8,
+    "records_lost":8000000
+  },
+  {
+    "name":"Gap Inc",
+    "year":3,
+    "records_lost":800000
+  },
+  {
+    "name":"Gawker.com",
+    "year":6,
+    "records_lost":1500000
+  },
+  {
+    "name":"Global Payments",
+    "year":8,
+    "records_lost":7000000
+  },
+  {
+    "name":"Gmail",
+    "year":11,
+    "records_lost":5000000
+  },
+  {
+    "name":"Greek government",
+    "year":8,
+    "records_lost":9000000
+  },
+  {
+    "name":"GS Caltex",
+    "year":4,
+    "records_lost":11100000
+  },
+  {
+    "name":"Hannaford Brothers Supermarket Chain",
+    "year":3,
+    "records_lost":4200000
+  },
+  {
+    "name":"Health Net - IBM",
+    "year":7,
+    "records_lost":1900000
+  },
+  {
+    "name":"Health Net ",
+    "year":5,
+    "records_lost":1500000
+  },
+  {
+    "name":"Heartland",
+    "year":5,
+    "records_lost":130000000
+  },
+  {
+    "name":"Hewlett Packard",
+    "year":2,
+    "records_lost":200000
+  },
+  {
+    "name":"Home Depot",
+    "year":11,
+    "records_lost":56000000
+  },
+  {
+    "name":"Honda Canada",
+    "year":7,
+    "records_lost":283000
+  },
+  {
+    "name":"Indiana University",
+    "year":9,
+    "records_lost":146000
+  },
+  {
+    "name":"Japan Airlines",
+    "year":11,
+    "records_lost":750000
+  },
+  {
+    "name":"Jefferson County",
+    "year":4,
+    "records_lost":1600000
+  },
+  {
+    "name":"JP Morgan Chase",
+    "year":11,
+    "records_lost":76000000
+  },
+  {
+    "name":"JP Morgan Chase",
+    "year":6,
+    "records_lost":2600000
+  },
+  {
+    "name":"KDDI",
+    "year":2,
+    "records_lost":4000000
+  },
+  {
+    "name":"Kirkwood Community College",
+    "year":9,
+    "records_lost":125000
+  },
+  {
+    "name":"Kissinger Cables",
+    "year":9,
+    "records_lost":1700000
+  },
+  {
+    "name":"Korea Credit Bureau",
+    "year":10,
+    "records_lost":20000000
+  },
+  {
+    "name":"KT Corp.",
+    "year":8,
+    "records_lost":8700000
+  },
+  {
+    "name":"Lincoln Medical & Mental Health Center",
+    "year":6,
+    "records_lost":130495
+  },
+  {
+    "name":"LinkedIn, eHarmony, Last.fm",
+    "year":8,
+    "records_lost":8000000
+  },
+  {
+    "name":"Living Social",
+    "year":9,
+    "records_lost":50000000
+  },
+  {
+    "name":"MacRumours.com",
+    "year":10,
+    "records_lost":860000
+  },
+  {
+    "name":"Massachusetts Government",
+    "year":7,
+    "records_lost":210000
+  },
+  {
+    "name":"Massive American business hack",
+    "year":8,
+    "records_lost":160000000
+  },
+  {
+    "name":"Medicaid",
+    "year":8,
+    "records_lost":780000
+  },
+  {
+    "name":"Memorial Healthcare System",
+    "year":7,
+    "records_lost":102153
+  },
+  {
+    "name":"Militarysingles.com",
+    "year":8,
+    "records_lost":163792
+  },
+  {
+    "name":"Monster.com",
+    "year":3,
+    "records_lost":1600000
+  },
+  {
+    "name":"Morgan Stanley Smith Barney",
+    "year":7,
+    "records_lost":34000
+  },
+  {
+    "name":"Mozilla",
+    "year":11,
+    "records_lost":76000
+  },
+  {
+    "name":"Neiman Marcus",
+    "year":10,
+    "records_lost":1100000
+  },
+  {
+    "name":"Nemours Foundation",
+    "year":7,
+    "records_lost":1055489
+  },
+  {
+    "name":"Network Solutions",
+    "year":5,
+    "records_lost":573000
+  },
+  {
+    "name":"New York City Health & Hospitals Corp.",
+    "year":6,
+    "records_lost":1700000
+  },
+  {
+    "name":"New York State Electric & Gas",
+    "year":8,
+    "records_lost":1800000
+  },
+  {
+    "name":"New York Taxis",
+    "year":10,
+    "records_lost":52000
+  },
+  {
+    "name":"Nexon Korea Corp",
+    "year":7,
+    "records_lost":13200000
+  },
+  {
+    "name":"NHS",
+    "year":7,
+    "records_lost":8300000
+  },
+  {
+    "name":"Nintendo",
+    "year":9,
+    "records_lost":240000
+  },
+  {
+    "name":"NMBS",
+    "year":9,
+    "records_lost":1460000
+  },
+  {
+    "name":"Norwegian Tax Authorities",
+    "year":4,
+    "records_lost":3950000
+  },
+  {
+    "name":"Office of the Texas Attorney General",
+    "year":8,
+    "records_lost":6500000
+  },
+  {
+    "name":"Ohio State University",
+    "year":6,
+    "records_lost":760000
+  },
+  {
+    "name":"Oregon Department of Motor Vehicles",
+    "year":7,
+    "records_lost":1000000
+  },
+  {
+    "name":"Puerto Rico Department of Health",
+    "year":6,
+    "records_lost":515000
+  },
+  {
+    "name":"RBS Worldpay",
+    "year":4,
+    "records_lost":1500000
+  },
+  {
+    "name":"Restaurant Depot",
+    "year":7,
+    "records_lost":200000
+  },
+  {
+    "name":"RockYou!",
+    "year":5,
+    "records_lost":32000000
+  },
+  {
+    "name":"San Francisco Public Utilities Commission ",
+    "year":7,
+    "records_lost":180000
+  },
+  {
+    "name":"Scribd",
+    "year":9,
+    "records_lost":500000
+  },
+  {
+    "name":"Seacoast Radiology, PA",
+    "year":6,
+    "records_lost":231400
+  },
+  {
+    "name":"Sega",
+    "year":7,
+    "records_lost":1290755
+  },
+  {
+    "name":"Service Personnel and Veterans Agency (UK)",
+    "year":4,
+    "records_lost":50500
+  },
+  {
+    "name":"SnapChat",
+    "year":9,
+    "records_lost":4700000
+  },
+  {
+    "name":"Sony Online Entertainment",
+    "year":7,
+    "records_lost":24600000
+  },
+  {
+    "name":"Sony Pictures",
+    "year":11,
+    "records_lost":47000
+  },
+  {
+    "name":"Sony Pictures",
+    "year":7,
+    "records_lost":1000000
+  },
+  {
+    "name":"Sony PSN",
+    "year":7,
+    "records_lost":77000000
+  },
+  {
+    "name":"South Africa police",
+    "year":9,
+    "records_lost":16000
+  },
+  {
+    "name":"South Carolina Government",
+    "year":8,
+    "records_lost":6400000
+  },
+  {
+    "name":"South Shore Hospital, Massachusetts",
+    "year":6,
+    "records_lost":800000
+  },
+  {
+    "name":"Southern California Medical-Legal Consultants",
+    "year":7,
+    "records_lost":300000
+  },
+  {
+    "name":"Spartanburg Regional Healthcare System",
+    "year":7,
+    "records_lost":400000
+  },
+  {
+    "name":"ssndob.ms",
+    "year":9,
+    "records_lost":4000000
+  },
+  {
+    "name":"Stanford University",
+    "year":4,
+    "records_lost":72000
+  },
+  {
+    "name":"Staples",
+    "year":11,
+    "records_lost":1160000
+  },
+  {
+    "name":"Starbucks",
+    "year":4,
+    "records_lost":97000
+  },
+  {
+    "name":"State of Texas",
+    "year":7,
+    "records_lost":3500000
+  },
+  {
+    "name":"Steam",
+    "year":7,
+    "records_lost":35000000
+  },
+  {
+    "name":"Stratfor",
+    "year":7,
+    "records_lost":935000
+  },
+  {
+    "name":"Sutter Medical Foundation",
+    "year":7,
+    "records_lost":4243434
+  },
+  {
+    "name":"T-Mobile, Deutsche Telecom",
+    "year":2,
+    "records_lost":17000000
+  },
+  {
+    "name":"Target",
+    "year":10,
+    "records_lost":70000000
+  },
+  {
+    "name":"TD Ameritrade",
+    "year":3,
+    "records_lost":6300000
+  },
+  {
+    "name":"TerraCom & YourTel",
+    "year":9,
+    "records_lost":170000
+  },
+  {
+    "name":"Texas Lottery",
+    "year":3,
+    "records_lost":89000
+  },
+  {
+    "name":"Three Iranian banks",
+    "year":8,
+    "records_lost":3000000
+  },
+  {
+    "name":"Tianya",
+    "year":7,
+    "records_lost":28000000
+  },
+  {
+    "name":"TK / TJ Maxx",
+    "year":3,
+    "records_lost":94000000
+  },
+  {
+    "name":"Tricare",
+    "year":7,
+    "records_lost":4901432
+  },
+  {
+    "name":"Triple-S Salud, Inc.",
+    "year":6,
+    "records_lost":398000
+  },
+  {
+    "name":"Twitter",
+    "year":9,
+    "records_lost":250000
+  },
+  {
+    "name":"Ubuntu",
+    "year":9,
+    "records_lost":2000000
+  },
+  {
+    "name":"UK Home Office",
+    "year":4,
+    "records_lost":84000
+  },
+  {
+    "name":"UK Ministry of Defence",
+    "year":4,
+    "records_lost":1700000
+  },
+  {
+    "name":"UK Revenue & Customs",
+    "year":3,
+    "records_lost":25000000
+  },
+  {
+    "name":"University of California Berkeley",
+    "year":5,
+    "records_lost":160000
+  },
+  {
+    "name":"University of Miami",
+    "year":4,
+    "records_lost":2100000
+  },
+  {
+    "name":"University of Utah Hospitals & Clinics",
+    "year":4,
+    "records_lost":2200000
+  },
+  {
+    "name":"University of Wisconsin - Milwaukee",
+    "year":7,
+    "records_lost":73000
+  },
+  {
+    "name":"US Army",
+    "year":7,
+    "records_lost":50000
+  },
+  {
+    "name":"US Dept of Defense",
+    "year":5,
+    "records_lost":72000
+  },
+  {
+    "name":"US Dept of Vet Affairs",
+    "year":2,
+    "records_lost":26500000
+  },
+  {
+    "name":"US Federal Reserve Bank of Cleveland",
+    "year":6,
+    "records_lost":400000
+  },
+  {
+    "name":"US Law Enforcement",
+    "year":7,
+    "records_lost":123461
+  },
+  {
+    "name":"US Military",
+    "year":5,
+    "records_lost":76000000
+  },
+  {
+    "name":"US Military",
+    "year":6,
+    "records_lost":260000
+  },
+  {
+    "name":"US National Guard",
+    "year":5,
+    "records_lost":131000
+  },
+  {
+    "name":"Virginia Dept. Of Health",
+    "year":5,
+    "records_lost":8257378
+  },
+  {
+    "name":"Virginia Prescription Monitoring Program",
+    "year":5,
+    "records_lost":531400
+  },
+  {
+    "name":"Vodafone",
+    "year":9,
+    "records_lost":2000000
+  },
+  {
+    "name":"Washington Post",
+    "year":7,
+    "records_lost":1270000
+  },
+  {
+    "name":"Washington State court system",
+    "year":9,
+    "records_lost":160000
+  },
+  {
+    "name":"Writerspace.com",
+    "year":7,
+    "records_lost":62000
+  },
+  {
+    "name":"Yahoo Japan",
+    "year":9,
+    "records_lost":22000000
+  },
+  {
+    "name":"Yahoo Voices",
+    "year":8,
+    "records_lost":450000
+  },
+  {
+    "name":"Yale University",
+    "year":6,
+    "records_lost":43000
+  },
+  {
+    "name":"Zappos",
+    "year":8,
+    "records_lost":24000000
+  }
+]
