@@ -42,16 +42,29 @@ var GetJSON = function (file) {
 
         var mesh = new THREE.Mesh(geometry, material);
         var breakRow = 8;
+        var posX = -400 + (counter*30);
+        var first = true;
 
-        if (counter < breakRow) {
-          mesh.position.set(counter*30, 0, 0);
-        } else if (counter > breakRow && counter < breakRow*2) {
-          mesh.position.set((counter-breakRow)*30, -15, breakRow*2);
-        } else if (counter > breakRow*2 && counter < breakRow*3) {
-          mesh.position.set((counter-breakRow*2)*30, -30, breakRow*4);
-        } else if (counter > breakRow*3 && counter < breakRow*4) {
-          mesh.position.set((counter-breakRow*3)*30, -40, breakRow*6);
+        for (counter > 0; counter % 8 === 0; counter++) {
+          var posY = counter*5;
+          var posZ = counter*20;
+          if(first) {
+            first = false;
+
+          }
         }
+
+        mesh.position.set(posX, posY, 0);
+
+        // if (counter < breakRow) {
+        //   mesh.position.set(counter*30, 0, 0);
+        // } else if (counter > breakRow && counter < breakRow*2) {
+        //   mesh.position.set((counter-breakRow)*30, -15, breakRow*2);
+        // } else if (counter > breakRow*2 && counter < breakRow*3) {
+        //   mesh.position.set((counter-breakRow*2)*30, -30, breakRow*4);
+        // } else if (counter > breakRow*3 && counter < breakRow*4) {
+        //   mesh.position.set((counter-breakRow*3)*30, -40, breakRow*6);
+        // }
 
         // experimental
         // if (counter % breakRow === breakRow) {
@@ -77,9 +90,9 @@ var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeig
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-camera.position.x = 110;
-camera.position.y = -30;
-camera.position.z = 140;
+camera.position.x = 0;
+camera.position.y = 0;
+camera.position.z = 80;
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
