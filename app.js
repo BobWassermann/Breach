@@ -22,122 +22,65 @@ function interactiveModel(width, height, amount) {
 }
 
 interactiveModel.prototype.init = function() {
-  var container, separation = 100, amountX = 50, amountY = 50, particles, particle;
 
-  container = document.createElement('section');
-  document.body.appendChild(container);
+  THREE.log = function()    { console.log.apply(console, arguments) };
+  THREE.warn = function()   { console.warn.apply(console, arguments) };
+  THREE.error = function()  { console.error.apply(console, arguments) };
+  THREE.MOUSE = {
+      LEFT: 0,
+      MIDDLE: 1,
+      RIGHT: 2
+  };
 
-  camera = new THREE.PerspectiveCamera( 75, this.width / this.height, 1, 10000 );
-  camera.position.z = 1000;
+  ixmodel.scene = new THREE.Scene();
+  ixmodel.camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, .1, 500 );
+  ixmodel.renderer = new THREE.WebGLRenderer();
 
-  scene = new THREE.Scene();
+  ixmodel.renderer.setSize(window.innerWidth, window.innerHeight);
 
-  renderer = new THREE.CanvasRenderer();
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( this.width, this.height );
-  container.appendChild( renderer.domElement );
+  ixmodel.camera.position.x = 0;
+  ixmodel.camera.position.y = 0;
+  ixmodel.camera.position.z = 400;
 
-  // particles
+  ixmodel.controls = new THREE.OrbitControls(ixmodel.camera, ixmodel.renderer.domElement);
 
-  var PI2 = Math.PI * 2;
-  var material = new THREE.SpriteCanvasMaterial( {
+}
 
-    color: 0xCD5A5E,
-    program: function ( context ) {
+interactiveModel.prototype.mesh = function(size, complexity) {
+  ixmodel.size = size;
+  ixmodel.complexity = complexity;
 
-      context.beginPath();
-      context.arc( 0, 0, 0.5, 0, PI2, true );
-      context.fill();
-
-    }
-
-  } );
-
-  for ( var i = 0; i < 1000; i ++ ) {
-
-    particle = new THREE.Sprite( material );
-    particle.position.x = Math.random() * 2 - 1;
-    particle.position.y = Math.random() * 2 - 1;
-    particle.position.z = Math.random() * 2 - 1;
-    particle.position.normalize();
-    particle.position.multiplyScalar( Math.random() * 10 + 450 );
-    particle.scale.multiplyScalar( 2 );
-    scene.add( particle );
-
-  }
-
-  // lines
+  var i;
+  var geometry = new THREE.SphereGeometry( ixmodel.size, ixmodel.complexity, ixmodel.complexity );
+  var material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
+  var random = Math.random() * 200;
 
   for (i in obj) {
+    ixmodel.mesh = new THREE.Mesh(geometry, material);
+    ixmodel.mesh.position.set(i * random, i * random, -i*100);
+    ixmodel.textMesh = new THREEx.Text('Test');
 
-    var vertexArr = [];
-    var geometry = new THREE.Geometry();
-
-    var vertex = new THREE.Vector3( Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1 );
-    
-    vertex.normalize();
-    vertex.multiplyScalar( 450 );
-
-    // var text = new THREEx.Text('Test');
-
-    geometry.vertices.push( vertex );
-    geometry.vertices.push( vertex.clone().multiplyScalar ( Math.random() * obj[i].records_lost/100000000 + 1) );
-
-
-    var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xCD5A5E, opacity: Math.random() } ) );
-    scene.add( line);
-
+    ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
-
-
-  //
-
-  window.addEventListener( 'resize', onWindowResize, false );
-}
-
-function onWindowResize() {
-  windowHalfX = window.innerWidth / 2;
-  windowHalfY = window.innerHeight / 2;
-
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
 
-function animate() {
-  requestAnimationFrame( animate );
-  render();
+interactiveModel.prototype.render = function() {
+  requestAnimationFrame(ixmodel.render);
+  ixmodel.renderer.render( ixmodel.scene, ixmodel.camera );
+  ixmodel.controls.update();
+  ixmodel.renderer.setClearColor( 0x000000, 1 );
+  document.body.appendChild(ixmodel.renderer.domElement);
 }
-
-function render() {
-  camera.position.x += ( mouseX - camera.position.x ) * .05;
-  camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
-  camera.lookAt( scene.position );
-  
-  renderer.setClearColor( 0xF0E8D4, 1);
-  renderer.render( scene, camera );
-}
-
-var mouseX = 0, mouseY = 0,
-
-    windowHalfX = window.innerWidth / 2,
-    windowHalfY = window.innerHeight / 2,
-
-    SEPARATION = 200,
-    AMOUNTX = 10,
-    AMOUNTY = 10,
-
-    camera, scene, renderer;
 
 var data = new parseJSON('data.json');
-controls = new THREE.OrbitControls(camera, renderer.domElement);
+var ixmodel;
 
 if (document.readyState) {
   setTimeout(function() {
-    var ixmodel = new interactiveModel(window.innerWidth, window.innerHeight, obj.length);
+    ixmodel = new interactiveModel(window.innerWidth, window.innerHeight, obj.length);
     ixmodel.init();
-    animate();
+    ixmodel.mesh(100, 20);
+    ixmodel.render();
   }, 100);
 }
