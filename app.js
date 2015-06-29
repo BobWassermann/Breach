@@ -78,21 +78,17 @@ interactiveModel.prototype.init = function() {
     vertex.normalize();
     vertex.multiplyScalar( 450 );
 
+    // var text = new THREEx.Text('Test');
+
     geometry.vertices.push( vertex );
-
-    var vertex2 = vertex.clone();
-    vertex2.multiplyScalar( Math.random() * 0.3 + 1 );
-
     geometry.vertices.push( vertex.clone().multiplyScalar ( Math.random() * obj[i].records_lost/100000000 + 1) );
 
+
     var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xCD5A5E, opacity: Math.random() } ) );
-    scene.add( line );
+    scene.add( line);
 
   }
 
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
   //
 
@@ -109,32 +105,6 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
-function onDocumentMouseMove(event) {
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
-}
-
-function onDocumentTouchStart(event) {
-  if ( event.touches.length > 1 ) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-  }
-}
-
-function onDocumentTouchMove(event) {
-  if ( event.touches.length == 1 ) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-  }
-}
 
 function animate() {
   requestAnimationFrame( animate );
@@ -162,6 +132,7 @@ var mouseX = 0, mouseY = 0,
     camera, scene, renderer;
 
 var data = new parseJSON('data.json');
+controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 if (document.readyState) {
   setTimeout(function() {
