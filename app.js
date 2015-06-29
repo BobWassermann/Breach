@@ -68,31 +68,26 @@ interactiveModel.prototype.init = function() {
 
   // lines
 
-  for (var i = 0; i < this.amount; i++) {
+  for (i in obj) {
 
+    var vertexArr = [];
     var geometry = new THREE.Geometry();
 
-    // var vertex = new THREE.Vector3( Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1 );
-    // vertex.normalize();
-    // vertex.multiplyScalar( 450 );
+    var vertex = new THREE.Vector3( Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1 );
+    
+    vertex.normalize();
+    vertex.multiplyScalar( 450 );
 
-    var vertex = [];
-    for (i in obj) {
-      vertex.push(new THREE.Vector3(obj[i].records_lost));
-      console.log(vertex);
-      vertex[i].normalize();
-      vertex[i].multiplyScalar(450);
-      
-      geometry.vertices.push( vertex[i] );
-    }
+    geometry.vertices.push( vertex );
 
-    // var vertex2 = vertex.clone();
-    // vertex2.multiplyScalar( Math.random() * 0.3 + 1 );
+    var vertex2 = vertex.clone();
+    vertex2.multiplyScalar( Math.random() * 0.3 + 1 );
 
-    // geometry.vertices.push( vertex2 );
+    geometry.vertices.push( vertex.clone().multiplyScalar ( Math.random() * obj[i].records_lost/100000000 + 1) );
 
     var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xCD5A5E, opacity: Math.random() } ) );
     scene.add( line );
+
   }
 
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
