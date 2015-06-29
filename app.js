@@ -48,8 +48,6 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.controls.keys = [ 65, 83, 68 ];
 
-  ixmodel.controls.addEventListener( 'change', ixmodel.render );
-
 }
 
 interactiveModel.prototype.mesh = function(size, complexity) {
