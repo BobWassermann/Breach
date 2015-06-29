@@ -15,10 +15,7 @@ function parseJSON(file) {
   xobj.send();
 }
 
-function interactiveModel(width, height, amount) {
-  this.width = width;
-  this.height = height;
-  this.amount = amount;
+function interactiveModel() {
 }
 
 interactiveModel.prototype.init = function() {
@@ -29,7 +26,7 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.scene = new THREE.Scene();
   ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 1, 1000 );
+  ixmodel.camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, .1, 500 );
   ixmodel.renderer = new THREE.WebGLRenderer();
 
   ixmodel.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -105,9 +102,9 @@ var ixmodel;
 
 if (document.readyState) {
   setTimeout(function() {
-    ixmodel = new interactiveModel(window.innerWidth, window.innerHeight, obj.length);
+    ixmodel = new interactiveModel();
     ixmodel.init();
-    ixmodel.mesh(10, 20);
+    ixmodel.mesh(10, 10);
     ixmodel.render();
   }, 100);
 }
