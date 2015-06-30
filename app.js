@@ -105,6 +105,7 @@ var data = new parseJSON('data.json');
 var ixmodel;
 
 if (document.readyState) {
+  document.querySelector('h1').classList.add('active');
   setTimeout(function() {
     ixmodel = new interactiveModel();
     ixmodel.init();
