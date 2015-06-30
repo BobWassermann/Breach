@@ -61,7 +61,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   var material =  new THREE.MeshLambertMaterial( { color:0xffffff, shading: THREE.FlatShading } );
 
   for (i in obj) {
-  	x = ( Math.random() - 0.5 ) * 800; y = ( Math.random() - 0.5 ) * 800; z = ( Math.random() - 0.5 ) * 800;
+  	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
     ixmodel.mesh = new THREE.Mesh(geometry, material);
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
@@ -76,7 +76,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   	ixmodel.textMesh.position.x = x;
   	ixmodel.textMesh.position.y = y - 20;
   	ixmodel.textMesh.position.z = z;
-    ixmodel.textMesh.scale.set( obj[i].records_lost / 8000000, obj[i].records_lost / 8000000, obj[i].records_lost / 8000000 );
+    ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
     ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
 
@@ -105,7 +105,6 @@ var data = new parseJSON('data.json');
 var ixmodel;
 
 if (document.readyState) {
-  document.querySelector('h1').classList.add('active');
   setTimeout(function() {
     ixmodel = new interactiveModel();
     ixmodel.init();
