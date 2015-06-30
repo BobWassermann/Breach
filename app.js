@@ -1,6 +1,7 @@
 "use strict";
 
 var obj = {};
+var textArr = [];
 
 function parseJSON(file) {
   this.file = file;
@@ -25,7 +26,7 @@ interactiveModel.prototype.init = function() {
   THREE.error = function()  { console.error.apply(console, arguments) };
 
   ixmodel.scene = new THREE.Scene();
-  ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+  ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.00075 );
   ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 10000 );
   
   ixmodel.renderer = new THREE.WebGLRenderer();
@@ -61,7 +62,8 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 
   for (i in obj) {
   	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
- 	var material =  new THREE.MeshLambertMaterial( { color:Math.random() * 0xffffff, shading: THREE.FlatShading } );
+	var randomColor = Math.random() * 0xffffff;
+ 	var material =  new THREE.MeshLambertMaterial( { color: randomColor, shading: THREE.FlatShading } );
     ixmodel.mesh = new THREE.Mesh(geometry, material);
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
@@ -73,10 +75,17 @@ interactiveModel.prototype.mesh = function(size, complexity) {
       size: 3,
       height: 1
     });
+	ixmodel.textMesh.material = material;
   	ixmodel.textMesh.position.x = x;
   	ixmodel.textMesh.position.y = y - (ixmodel.mesh.scale.y / 0.05);
   	ixmodel.textMesh.position.z = z;
+	
+	ixmodel.textMesh.quaternion.copy( ixmodel.camera.quaternion );
+	
     ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
+	
+	textArr[i] = ixmodel.textMesh;
+	
     ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
 
@@ -90,7 +99,6 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 
       light = new THREE.AmbientLight( 0x222222 );
       ixmodel.scene.add( light );
-
 }
 
 
@@ -98,6 +106,9 @@ interactiveModel.prototype.render = function() {
   requestAnimationFrame(ixmodel.render);
   ixmodel.renderer.render( ixmodel.scene, ixmodel.camera );
   ixmodel.controls.update();
+  for (var i in textArr) {
+  	textArr[i].quaternion.copy( ixmodel.camera.quaternion );
+  }
   document.body.appendChild(ixmodel.renderer.domElement);
 }
 
