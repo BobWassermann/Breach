@@ -76,7 +76,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   	ixmodel.textMesh.position.x = x;
   	ixmodel.textMesh.position.y = y - 20;
   	ixmodel.textMesh.position.z = z;
-    ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
+    ixmodel.textMesh.scale.set( obj[i].records_lost / 8000000, obj[i].records_lost / 8000000, obj[i].records_lost / 8000000 );
     ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
 
@@ -105,6 +105,7 @@ var data = new parseJSON('data.json');
 var ixmodel;
 
 if (document.readyState) {
+  document.querySelector('h1').classList.add('active');
   setTimeout(function() {
     ixmodel = new interactiveModel();
     ixmodel.init();

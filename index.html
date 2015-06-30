@@ -3,11 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>BREACH</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body { margin: 0; }
+
+  canvas {
+    width: 100%; height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+  }
+
+  h1.title {
+    position: fixed;
+    color: #1F1F1F;
+    z-index: 10;
+    top: 50%; left: 50%;
+    letter-spacing: 0.1em;
+    font-family: 'Gotham', sans-serif;
+    font-size: 200px;
+    padding: 0; margin: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+  }
+
+  h1.title.active {
+    opacity: 0;
+  }
+
+  #content {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -o-display: flex;
+    display: flex;
+  }
+
+  #content div {
+    width: 20%;
+  }
+  </style>
 </head>
 <body>
-  <!-- <h1 class="title">BREACH</h1> -->
-  <div id="out"></div>
+  
+  <h1 class="title">BREACH</h1>
+  
   <script src="js/vendor/three.min.js"></script>
   <script src="js/vendor/TrackballControls.js"></script>
   <script src="js/vendor/OrbitControls.js"></script>
