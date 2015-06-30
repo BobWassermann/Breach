@@ -61,7 +61,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   var material =  new THREE.MeshLambertMaterial( { color:0xffffff, shading: THREE.FlatShading } );
 
   for (i in obj) {
-  	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
+  	x = ( Math.random() - 0.5 ) * 800; y = ( Math.random() - 0.5 ) * 800; z = ( Math.random() - 0.5 ) * 800;
     ixmodel.mesh = new THREE.Mesh(geometry, material);
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
