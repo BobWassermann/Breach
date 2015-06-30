@@ -60,15 +60,20 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   var geometry = new THREE.SphereGeometry( ixmodel.size, ixmodel.complexity, ixmodel.complexity );
   var material =  new THREE.MeshLambertMaterial( { color:0xffffff, shading: THREE.FlatShading } );
 
+  var x, y ,z;
   for (i in obj) {
-  ixmodel.mesh = new THREE.Mesh(geometry, material);
-	ixmodel.mesh.position.x = ( Math.random() - 0.5 ) * 1000;
-	ixmodel.mesh.position.y = ( Math.random() - 0.5 ) * 1000;
-	ixmodel.mesh.position.z = ( Math.random() - 0.5 ) * 1000;
-  ixmodel.mesh.updateMatrix();
-  ixmodel.mesh.matrixAutoUpdate = false;
-  ixmodel.textMesh = new THREEx.Text(obj[i].name);
-  ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
+	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
+    ixmodel.mesh = new THREE.Mesh(geometry, material);
+	ixmodel.mesh.position.x = x;
+	ixmodel.mesh.position.y = y;
+	ixmodel.mesh.position.z = z;
+    ixmodel.mesh.updateMatrix();
+    ixmodel.mesh.matrixAutoUpdate = false;
+    ixmodel.textMesh = new THREEx.Text(obj[i].name);
+	ixmodel.textMesh.position.x = x;
+	ixmodel.textMesh.position.y = y - 20;
+	ixmodel.textMesh.position.z = z;
+    ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
 
   var light = new THREE.DirectionalLight( 0xffffff );
