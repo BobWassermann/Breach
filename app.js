@@ -26,7 +26,7 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.scene = new THREE.Scene();
   ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 10000 );
+  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 5000 );
   
   ixmodel.renderer = new THREE.WebGLRenderer();
   ixmodel.renderer.setClearColor( ixmodel.scene.fog.color );
@@ -35,7 +35,7 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.camera.position.x = 0;
   ixmodel.camera.position.y = 0;
-  ixmodel.camera.position.z = 1000;
+  ixmodel.camera.position.z = 500;
 
   ixmodel.controls = new THREE.TrackballControls(ixmodel.camera);
   ixmodel.controls.rotateSpeed = 1.0;
@@ -66,18 +66,16 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
   	ixmodel.mesh.position.z = z;
-    ixmodel.mesh.scale.set( obj[i].records_lost / 7500000, obj[i].records_lost / 7500000, obj[i].records_lost / 7500000 );
+    ixmodel.mesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
     ixmodel.mesh.updateMatrix();
     ixmodel.mesh.matrixAutoUpdate = false;
     ixmodel.textMesh = new THREEx.Text(obj[i].name, { 
       size: 3,
       height: 1
     });
-	
   	ixmodel.textMesh.position.x = x;
-  	ixmodel.textMesh.position.y = y - (ixmodel.mesh.scale.y / 0.05);
+  	ixmodel.textMesh.position.y = y - 20;
   	ixmodel.textMesh.position.z = z;
-	
     ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
     ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
