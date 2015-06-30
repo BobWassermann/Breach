@@ -2,6 +2,7 @@
 
 var obj = {};
 var textArr = [];
+var lightArr = [];
 
 function parseJSON(file) {
   this.file = file;
@@ -68,10 +69,11 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
   	ixmodel.mesh.position.z = z;
-    ixmodel.mesh.scale.set( obj[i].records_lost / 7500000, obj[i].records_lost / 7500000, obj[i].records_lost / 7500000 );
+    ixmodel.mesh.scale.set( (obj[i].records_lost * 0.000000075) + 1, (obj[i].records_lost * 0.000000075) + 1, (obj[i].records_lost * 0.000000075) + 1 );
     ixmodel.mesh.updateMatrix();
     ixmodel.mesh.matrixAutoUpdate = false;
-    ixmodel.textMesh = new THREEx.Text(obj[i].name, { 
+	var year = (obj[i].year < 10) ? '200'+obj[i].year : '20'+obj[i].year;
+    ixmodel.textMesh = new THREEx.Text(obj[i].name + ' (' + year + ')', { 
       size: 3,
       height: 1
     });
@@ -82,7 +84,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 	
 	ixmodel.textMesh.quaternion.copy( ixmodel.camera.quaternion );
 	
-    ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
+    ixmodel.textMesh.scale.set( (obj[i].records_lost * 0.00000005) + 1, (obj[i].records_lost * 0.00000005) + 1, (obj[i].records_lost * 0.00000005) + 1 );
 	
 	textArr[i] = ixmodel.textMesh;
 	
@@ -92,13 +94,14 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   var light = new THREE.DirectionalLight( 0xffffff );
       light.position.set( 1, 1, 1 );
       ixmodel.scene.add( light );
-
+	  lightArr[0] = light;
       light = new THREE.DirectionalLight( 0x002288 );
       light.position.set( -1, -1, -1 );
       ixmodel.scene.add( light );
-
+	  lightArr[1] = light;
       light = new THREE.AmbientLight( 0x222222 );
       ixmodel.scene.add( light );
+	  lightArr[2] = light;
 }
 
 
@@ -108,6 +111,10 @@ interactiveModel.prototype.render = function() {
   ixmodel.controls.update();
   for (var i in textArr) {
   	textArr[i].quaternion.copy( ixmodel.camera.quaternion );
+  }
+  for (var i in lightArr) {
+  	lightArr[i].quaternion.copy( ixmodel.camera.quaternion );
+  	lightArr[i].position.copy( ixmodel.camera.position );
   }
   document.body.appendChild(ixmodel.renderer.domElement);
 }
