@@ -27,11 +27,11 @@ interactiveModel.prototype.init = function() {
   THREE.error = function()  { console.error.apply(console, arguments) };
 
   ixmodel.scene = new THREE.Scene();
-  ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.00075 );
+  //ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.00075 );
   ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 10000 );
   
   ixmodel.renderer = new THREE.WebGLRenderer();
-  ixmodel.renderer.setClearColor( ixmodel.scene.fog.color );
+  ixmodel.renderer.setClearColor( 0xcccccc ); //ixmodel.scene.fog.color );
   ixmodel.renderer.setSize(window.innerWidth, window.innerHeight);
   ixmodel.renderer.setPixelRatio( window.devicePixelRatio );
 
@@ -73,22 +73,38 @@ interactiveModel.prototype.mesh = function(size, complexity) {
     ixmodel.mesh.updateMatrix();
     ixmodel.mesh.matrixAutoUpdate = false;
 	var year = (obj[i].year < 10) ? '200'+obj[i].year : '20'+obj[i].year;
-    ixmodel.textMesh = new THREEx.Text(obj[i].name + ' (' + year + ')', { 
+	var text = new String(obj[i].name + ' (' + year + ')');
+    ixmodel.textMesh = new THREEx.Text(text, { 
       size: 3,
       height: 1
     });
 	ixmodel.textMesh.material = material;
   	ixmodel.textMesh.position.x = x;
-  	ixmodel.textMesh.position.y = y - (ixmodel.mesh.scale.y / 0.05);
+  	ixmodel.textMesh.position.y = y - (ixmodel.mesh.scale.y / 0.07);
   	ixmodel.textMesh.position.z = z;
 	
 	ixmodel.textMesh.quaternion.copy( ixmodel.camera.quaternion );
 	
     ixmodel.textMesh.scale.set( (obj[i].records_lost * 0.00000005) + 1, (obj[i].records_lost * 0.00000005) + 1, (obj[i].records_lost * 0.00000005) + 1 );
 	
-	textArr[i] = ixmodel.textMesh;
+	textArr.push(ixmodel.textMesh);
 	
-    ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
+	var text2 = new String('Records lost: '+obj[i].records_lost);
+    ixmodel.textMesh2 = new THREEx.Text(text2, { 
+      size: 3,
+      height: 1
+    });
+	ixmodel.textMesh2.material = material;
+  	ixmodel.textMesh2.position.x = ixmodel.textMesh.position.x;
+  	ixmodel.textMesh2.position.y = ixmodel.textMesh.position.y - (ixmodel.textMesh.scale.y / 0.19);
+  	ixmodel.textMesh2.position.z = ixmodel.textMesh.position.z;
+	
+	ixmodel.textMesh2.quaternion.copy( ixmodel.camera.quaternion );
+	
+    ixmodel.textMesh2.scale.set( (obj[i].records_lost * 0.000000025) + 1, (obj[i].records_lost * 0.000000025) + 1, (obj[i].records_lost * 0.000000025) + 1 );
+	textArr.push(ixmodel.textMesh2);
+	
+    ixmodel.scene.add( ixmodel.textMesh, ixmodel.textMesh2, ixmodel.mesh );
   }
 
   var light = new THREE.DirectionalLight( 0xffffff );
