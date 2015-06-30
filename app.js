@@ -26,7 +26,7 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.scene = new THREE.Scene();
   ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 3000 );
+  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 5000 );
   
   ixmodel.renderer = new THREE.WebGLRenderer();
   ixmodel.renderer.setClearColor( ixmodel.scene.fog.color );
@@ -56,23 +56,27 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   ixmodel.size = size;
   ixmodel.complexity = complexity;
 
-  var i;
+  var i, x, y, z;
   var geometry = new THREE.SphereGeometry( ixmodel.size, ixmodel.complexity, ixmodel.complexity );
   var material =  new THREE.MeshLambertMaterial( { color:0xffffff, shading: THREE.FlatShading } );
 
-  var x, y ,z;
   for (i in obj) {
-	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
+  	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
     ixmodel.mesh = new THREE.Mesh(geometry, material);
-	ixmodel.mesh.position.x = x;
-	ixmodel.mesh.position.y = y;
-	ixmodel.mesh.position.z = z;
+  	ixmodel.mesh.position.x = x;
+  	ixmodel.mesh.position.y = y;
+  	ixmodel.mesh.position.z = z;
+    ixmodel.mesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
     ixmodel.mesh.updateMatrix();
     ixmodel.mesh.matrixAutoUpdate = false;
-    ixmodel.textMesh = new THREEx.Text(obj[i].name);
-	ixmodel.textMesh.position.x = x;
-	ixmodel.textMesh.position.y = y - 20;
-	ixmodel.textMesh.position.z = z;
+    ixmodel.textMesh = new THREEx.Text(obj[i].name, { 
+      size: 3,
+      height: 1
+    });
+  	ixmodel.textMesh.position.x = x;
+  	ixmodel.textMesh.position.y = y - 20;
+  	ixmodel.textMesh.position.z = z;
+    ixmodel.textMesh.scale.set( obj[i].records_lost / 5000000, obj[i].records_lost / 5000000, obj[i].records_lost / 5000000 );
     ixmodel.scene.add( ixmodel.textMesh, ixmodel.mesh );
   }
 
