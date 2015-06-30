@@ -26,7 +26,7 @@ interactiveModel.prototype.init = function() {
 
   ixmodel.scene = new THREE.Scene();
   ixmodel.scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-  ixmodel.camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, .1, 500 );
+  ixmodel.camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, .1, 2000 );
   ixmodel.renderer = new THREE.WebGLRenderer();
 
   ixmodel.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -59,13 +59,17 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
   for (i in obj) {
-    var random = (Math.random() - 0.5) * 1000;
     ixmodel.mesh = new THREE.Mesh(geometry, material);
-    ixmodel.mesh.position.set(random, random, random);
+	ixmodel.mesh.position.x = ( Math.random() - 0.5 ) * 1000;
+	ixmodel.mesh.position.y = ( Math.random() - 0.5 ) * 1000;
+	ixmodel.mesh.position.z = ( Math.random() - 0.5 ) * 1000;
     ixmodel.mesh.updateMatrix();
     ixmodel.mesh.matrixAutoUpdate = false;
     ixmodel.textMesh = new THREEx.Text(obj[i].name);
-    ixmodel.textMesh.position.set(random, random * 2, random);
+	
+	ixmodel.textMesh.position.x = ( Math.random() - 0.5 ) * 1000;
+	ixmodel.textMesh.position.y = ( Math.random() - 0.5 ) * 1000;
+	ixmodel.textMesh.position.z = ( Math.random() - 0.5 ) * 1000;
 
     ixmodel.titleTextMesh = new THREEx.Text('BREACH', { size: 10, height: 5 });
     ixmodel.titleTextMesh.position.set(0, 0, 50);
