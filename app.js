@@ -20,6 +20,22 @@ function parseJSON(file) {
 function interactiveModel() {
 }
 
+function modal(trigger, type) {
+  this.trigger = trigger;
+  this.type = type;
+  if (this.type === 'about') {
+    document.querySelector(this.trigger).addEventListener('click', function(e){
+      e.preventDefault();
+      document.body.innerHTML += '<div class="modal"><div class="container"><h2>About</h2><article><p>Ever wondered how many data breaches took place in the last years? Hold on, wait, even better… Ever wondered how much data got stolen from big companies in the past years?</p><p>It’s a universe of data. And hey, let me tell you that story by, well, creating a universe.</p></article></div></div>';
+    });
+  } else if (this.type === 'faq') {
+    document.querySelector(this.trigger).addEventListener('click', function(e){
+      e.preventDefault();
+      document.body.innerHTML += '<div class="modal"><div class="container"><h2>FAQ</h2><article><dl><dt>I’m super hyped about this thing, but it just doesn’t load</dt><dd>Damn. This could be few things. Are you on the latest Chrome or Safari? Do you have a pretty computer or new iPhone? If so, just refresh the page, the randomizer just went crazy. If not, I’m extremely sorry, I can’t make this thing compatible with your machine.</dd><dt>How is this made?</dt><dd>Three.js and some Javascript superpowers.</dd><dt>What font is it your using?</dt>  <dd>Inconsolata, you can get it for free on Google Webfonts<dd><dt>All your CSS is inline in your header, what are you? An animal?</dt><dd>I really, really have to. Performance thingies.</dd></dl></article></div></div>';
+    });
+  }
+}
+
 interactiveModel.prototype.init = function() {
 
   THREE.log = function()    { console.log.apply(console, arguments) };
@@ -137,6 +153,8 @@ interactiveModel.prototype.render = function() {
 
 var data = new parseJSON('data.json');
 var ixmodel;
+var aboutModal = new modal('nav ul li:nth-child(1)', 'about');
+var faqModal = new modal('nav ul li:nth-child(2)', 'faq');
 
 if (document.readyState) {
   document.querySelector('h1').classList.add('active');

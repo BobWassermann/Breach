@@ -5,7 +5,8 @@
   <title>BREACH</title>
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <style type="text/css">
-    body { margin: 0; font-family: 'Inconsolata'; }
+  /* inline, faster load */
+  body { margin: 0; font-family: 'Inconsolata'; }
 
   canvas {
     width: 100%; height: 100%;
@@ -71,7 +72,72 @@
   nav ul li {
     float: left;
     margin: 2rem;
+    cursor: pointer;
   }
+
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 99;
+  }
+
+  .modal .container {
+    position: absolute;
+    top: 10%; left: 20%;
+    width: 60%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+
+  .modal .container h2 { text-align: center; font-style: 48px; }
+  .modal .container article { width: 60%; min-width: 300px; margin: 10% auto; line-height: 1.2em; font-size: 18px; }
+  .modal .container p { margin: 30px auto; }
+  .modal .container p:first-child { margin-top: 0; }
+  dt { font-weight: bold; margin-top: 30px; }
+  dt:first-child { margin-top: 0; }
+  dd { margin: 10px 0; }
+
   </style>
 </head>
 <body>
