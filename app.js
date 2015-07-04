@@ -79,7 +79,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 
   for (i in obj) {
   	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
-	var randomColor = Math.random() * 0xffffff;
+	var randomColor = Math.random() * 0x932B2F;
  	var material =  new THREE.MeshLambertMaterial( { color: randomColor, shading: THREE.FlatShading } );
     ixmodel.mesh = new THREE.Mesh(geometry, material);
   	ixmodel.mesh.position.x = x;
@@ -92,7 +92,8 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 	var text = new String(obj[i].name + ' (' + year + ')');
     ixmodel.textMesh = new THREEx.Text(text, { 
       size: 3,
-      height: 1
+      height: 0.2,
+      font: 'inconsolata'
     });
 	ixmodel.textMesh.material = material;
   	ixmodel.textMesh.position.x = x;
@@ -108,7 +109,8 @@ interactiveModel.prototype.mesh = function(size, complexity) {
 	var text2 = new String('Records lost: '+obj[i].records_lost);
     ixmodel.textMesh2 = new THREEx.Text(text2, { 
       size: 3,
-      height: 1
+      height: 0.2,
+      font: 'inconsolata'
     });
 	ixmodel.textMesh2.material = material;
   	ixmodel.textMesh2.position.x = ixmodel.textMesh.position.x;
