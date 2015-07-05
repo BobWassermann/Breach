@@ -34,7 +34,9 @@ function modal(trigger, type) {
       document.body.innerHTML += '<div class="modal"><div class="container"><i class="close">x</i><h2>FAQ</h2><article><dl><dt>I’m super hyped about this thing, but it just doesn’t load</dt><dd>Damn. This could be few things. Are you on the latest Chrome or Safari? Do you have a pretty computer or new iPhone? If so, just refresh the page, the randomizer just went crazy. If not, I’m extremely sorry, I can’t make this thing compatible with your machine.</dd><dt>How is this made?</dt><dd>Three.js and some Javascript superpowers.</dd><dt>What font is it your using?</dt>  <dd>Inconsolata, you can get it for free on Google Webfonts<dd><dt>All your CSS is inline in your header, what are you? An animal?</dt><dd>I really, really have to. Performance thingies.</dd></dl></article></div></div>';
     });
   }
-  // document.querySelector('i.close').addEventListener('click', function(){ document.body.removeChild(document.querySelector('.modal')) });
+  if (document.querySelector('.modal')) {
+    document.querySelector('.modal .close').addEventListener('click', function(){ document.body.removeChild(document.querySelector('.modal')) });
+  }
 }
 
 interactiveModel.prototype.init = function() {
