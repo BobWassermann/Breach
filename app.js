@@ -26,14 +26,15 @@ function modal(trigger, type) {
   if (this.type === 'about') {
     document.querySelector(this.trigger).addEventListener('click', function(e){
       e.preventDefault();
-      document.body.innerHTML += '<div class="modal"><div class="container"><h2>About</h2><article><p>Ever wondered how many data breaches took place in the last years? Hold on, wait, even better… Ever wondered how much data got stolen from big companies in the past years?</p><p>It’s a universe of data. And hey, let me tell you that story by, well, creating a universe.</p></article></div></div>';
+      document.body.innerHTML += '<div class="modal"><div class="container"><i class="close">x</i><h2>About</h2><article><p>Ever wondered how many data breaches took place in the last years? Hold on, wait, even better… Ever wondered how much data got stolen from big companies in the past years?</p><p>It’s a universe of data. And hey, let me tell you that story by, well, creating a universe.</p></article></div></div>';
     });
   } else if (this.type === 'faq') {
     document.querySelector(this.trigger).addEventListener('click', function(e){
       e.preventDefault();
-      document.body.innerHTML += '<div class="modal"><div class="container"><h2>FAQ</h2><article><dl><dt>I’m super hyped about this thing, but it just doesn’t load</dt><dd>Damn. This could be few things. Are you on the latest Chrome or Safari? Do you have a pretty computer or new iPhone? If so, just refresh the page, the randomizer just went crazy. If not, I’m extremely sorry, I can’t make this thing compatible with your machine.</dd><dt>How is this made?</dt><dd>Three.js and some Javascript superpowers.</dd><dt>What font is it your using?</dt>  <dd>Inconsolata, you can get it for free on Google Webfonts<dd><dt>All your CSS is inline in your header, what are you? An animal?</dt><dd>I really, really have to. Performance thingies.</dd></dl></article></div></div>';
+      document.body.innerHTML += '<div class="modal"><div class="container"><i class="close">x</i><h2>FAQ</h2><article><dl><dt>I’m super hyped about this thing, but it just doesn’t load</dt><dd>Damn. This could be few things. Are you on the latest Chrome or Safari? Do you have a pretty computer or new iPhone? If so, just refresh the page, the randomizer just went crazy. If not, I’m extremely sorry, I can’t make this thing compatible with your machine.</dd><dt>How is this made?</dt><dd>Three.js and some Javascript superpowers.</dd><dt>What font is it your using?</dt>  <dd>Inconsolata, you can get it for free on Google Webfonts<dd><dt>All your CSS is inline in your header, what are you? An animal?</dt><dd>I really, really have to. Performance thingies.</dd></dl></article></div></div>';
     });
   }
+  // document.querySelector('i.close').addEventListener('click', function(){ document.body.removeChild(document.querySelector('.modal')) });
 }
 
 interactiveModel.prototype.init = function() {
@@ -80,7 +81,7 @@ interactiveModel.prototype.mesh = function(size, complexity) {
   for (i in obj) {
   	x = ( Math.random() - 0.5 ) * 1000; y = ( Math.random() - 0.5 ) * 1000; z = ( Math.random() - 0.5 ) * 1000;
 	var randomColor = Math.random() * 0x932B2F;
- 	var material =  new THREE.MeshLambertMaterial( { color: randomColor, shading: THREE.FlatShading } );
+ 	var material =  new THREE.MeshPhongMaterial( { color: randomColor, shading: THREE.FlatShading, shininess: 180 } );
     ixmodel.mesh = new THREE.Mesh(geometry, material);
   	ixmodel.mesh.position.x = x;
   	ixmodel.mesh.position.y = y;
@@ -146,10 +147,15 @@ interactiveModel.prototype.render = function() {
   for (var i in textArr) {
   	textArr[i].quaternion.copy( ixmodel.camera.quaternion );
   }
-  for (var i in lightArr) {
-  	lightArr[i].quaternion.copy( ixmodel.camera.quaternion );
-  	lightArr[i].position.copy( ixmodel.camera.position );
-  }
+  for (var i in lightArr) {
+      if(i === 1){
+      lightArr[i].quaternion.copy( ixmodel.camera.quaternion * -1 );
+      lightArr[i].position.copy( ixmodel.camera.position * -1 );
+    } else {
+      lightArr[i].quaternion.copy( ixmodel.camera.quaternion );
+      lightArr[i].position.copy( ixmodel.camera.position );
+    }
+  }
   document.body.appendChild(ixmodel.renderer.domElement);
 }
 
